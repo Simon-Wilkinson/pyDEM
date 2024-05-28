@@ -1,0 +1,5 @@
+cmake_minimum_required(VERSION 3.13)
+project(pyDEM)
+add_subdirectory("dependencies/pybind11")
+include_directories(include)
+pybind11_add_module(pyDEM src/bindings.cpp)
