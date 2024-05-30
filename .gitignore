@@ -3,3 +3,4 @@ bin/
 build/
 py/venv/
 __pycache__
+dependencies/pybind11/

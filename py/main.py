@@ -85,9 +85,6 @@ def animate(steps: list[Step], boundary_radius: float):
     ani = animation.FuncAnimation(fig, update, frames=len(steps), interval=5, blit=True, repeat=False)
     plt.show()
    
-    # Show plot
-    
-
 
 def main():
     boundary_radius = 120

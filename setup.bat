@@ -1,5 +1,10 @@
 @echo off
 
+cd dependencies
+git clone https://github.com/pybind/pybind11.git
+
+cd ..
+
 :: Create build directory if it doesn't exist
 if not exist build (
     mkdir build
@@ -11,6 +16,7 @@ cd build
 :: Run cmake in the parent directory
 cmake ..
 
+:: Replace with your MSBuild.exe path!
 call "C:\Program Files\Microsoft Visual Studio\2022\Professional\MSBuild\Current\Bin\MSBuild.exe" pyDEM.sln /p:Configuration=Release
 
 :: Python install
@@ -35,7 +41,7 @@ pip install -r requirements.txt
 if not exist .\venv\Lib\site-packages\pyDEM (
     mkdir .\venv\Lib\site-packages\pyDEM
 )
-xcopy /Y ..\build\Release\*.pyd .\venv\Lib\site-packages\pyDEM
+xcopy /Y ..\build\Release\*.pyd .\venv\Lib\site-packages
 
 echo Setup complete.
 pause
