@@ -2,12 +2,10 @@ import matplotlib.pyplot as plt
 import matplotlib.animation as animation
 import numpy as np
 
-from DEM.pyDEM import DEMSimulation
+from pyDEM import DEMSimulation
 
 from data_model import Particle, Step
 from analysis import calculate_degree_of_mixing
-
-
 
 
 def main():
